@@ -1,0 +1,28 @@
+.user-img{
+    width: 100%;
+    height: auto;
+}
+.email{
+    font-size: 0.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.name{
+    font-size: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.mr{
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+.ms{
+    background-image: linear-gradient( 135deg, #F6CEEC 10%, #D939CD 100%);
+}
+.view-profile{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

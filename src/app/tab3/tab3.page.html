@@ -1,0 +1,6 @@
+<app-header [isOuterHeader]="true"></app-header>
+<ion-content [fullscreen]="true">
+  <app-header [isOuterHeader]="false"></app-header>
+  <ion-badge *ngFor="let tag of tagList">{{tag}}</ion-badge
+    >
+</ion-content>

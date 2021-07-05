@@ -1,0 +1,10 @@
+<ion-header [translucent]="true" *ngIf="isOuterHeader">
+  <ion-toolbar>
+    <ion-title> my circle </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header *ngIf="!isOuterHeader" collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">my circle</ion-title>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,46 @@
+<app-header [isOuterHeader]="true"></app-header>
+<ion-content [fullscreen]="true">
+  <app-header [isOuterHeader]="false"></app-header>
+  <ion-row>
+    <ion-col
+      *ngFor="let buddy of userListToDisplay"
+      size="6"
+      size-sm="6"
+      size-md="4"
+    >
+      <ion-card >
+        <img [src]="buddy.picture" class="user-img" />
+        <ion-card-header>
+          <ion-badge [class]="buddy.title === 'mr'?'mr':'ms'"
+            >{{buddy.title}}</ion-badge
+          >
+          <ion-card-title class="name">
+            {{buddy.firstName}} {{buddy.lastName}}
+          </ion-card-title>
+          <ion-card-subtitle class="email">{{buddy.email}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip color="primary" class="view-profile" (click)="openProfileView(buddy)">
+            <ion-label>Full Profile</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-infinite-scroll
+    threshold="50px"
+    (ionInfinite)="loadData($event)"
+    position="bottom"
+  >
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openScannerToSearchBuddy()">
+      <ion-icon name="qr-code"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

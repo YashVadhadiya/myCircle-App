@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-wrap">
+    <ion-avatar>
+      <img [src]="userProfileDetail.picture" />
+    </ion-avatar>
+    <ion-badge [class]="userProfileDetail.title === 'mr'?'mr':'ms'"
+    >{{userProfileDetail.title}}</ion-badge
+  >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> {{ userProfileDetail.title }} {{ userProfileDetail.firstName }} {{userProfileDetail.lastName}}</ion-card-title>
+        <ion-card-subtitle> {{ userProfileDetail.id }}</ion-card-subtitle>
+        <ion-card-subtitle> {{ userProfileDetail.email }}</ion-card-subtitle>
+        <ion-card-subtitle> {{ userProfileDetail.phone }}</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="3"> Gender </ion-col>
+          <ion-col size="9">
+            {{ userProfileDetail.gender }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3"> Date of Birth </ion-col>
+          <ion-col size="9">
+            {{ userProfileDetail.dateOfBirth }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3"> Registered On </ion-col>
+          <ion-col size="9">
+            {{ userProfileDetail.registerDate }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3"> Address </ion-col>
+          <ion-col size="9">
+            {{ userProfileDetail.location.street }},  {{ userProfileDetail.location.city }},  {{ userProfileDetail.location.state }},  {{ userProfileDetail.location.country }}
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+  
+</ion-content>

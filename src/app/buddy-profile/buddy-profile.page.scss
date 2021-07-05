@@ -1,0 +1,18 @@
+.mr{
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+.ms{
+    background-image: linear-gradient( 135deg, #F6CEEC 10%, #D939CD 100%);
+}
+.profile-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    ion-avatar{
+        margin-bottom: 10px;
+    }
+    ion-card{
+        width: 100%;
+    }
+}
